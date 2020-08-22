@@ -258,7 +258,6 @@ vertical-align: middle;
 .content {
   font-size: 2.5rem;
   display: grid;
-  grid-template-rows: 1fr 3fr;
   padding-left: 40px;
 }
 .nav {
@@ -296,6 +295,9 @@ vertical-align: middle;
   }
 }
 @media (min-width: 901px) {
+  .content {
+    grid-template-rows: 1fr 3fr;
+  }
   .grid {
     display: grid;
   }
@@ -311,12 +313,18 @@ vertical-align: middle;
   html {
     font-size: 12px;
   }
+  .content {
+    padding-top: 50px;
+  }
   .wrapper {
     padding: 20px;
   }
   .sidebar {
     margin-bottom: 10px;
     grid-template-columns: 1fr 1fr;
+  }
+  .nav {
+    padding: 5px;
   }
   .menu > ul {
     max-height: 0;
