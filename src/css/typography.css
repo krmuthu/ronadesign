@@ -1,24 +1,24 @@
 
 @font-face {
   font-family: 'hk_groteskblack';
-  src: url('/static/fonts/hkgrotesk-black-webfont.woff2') format('woff2'),
-       url('/static/fonts/hkgrotesk-black-webfont.woff') format('woff');
+  src: url('../fonts/hkgrotesk-black-webfont.woff2') format('woff2'),
+       url('../fonts/hkgrotesk-black-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
 }
 @font-face {
   font-family: 'hk_groteskregular';
-  src: url('/static/fonts/hkgrotesk-regular-webfont.woff2') format('woff2'),
-       url('/static/fonts/hkgrotesk-regular-webfont.woff') format('woff');
+  src: url('../fonts/hkgrotesk-regular-webfont.woff2') format('woff2'),
+       url('../fonts/hkgrotesk-regular-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
 }
 @font-face {
   font-family: 'hk_groteskmedium';
-  src: url('/static/fonts/hkgrotesk-medium-webfont.woff2') format('woff2'),
-       url('/static/fonts/hkgrotesk-medium-webfont.woff') format('woff');
+  src: url('../fonts/hkgrotesk-medium-webfont.woff2') format('woff2'),
+       url('../fonts/hkgrotesk-medium-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 

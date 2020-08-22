@@ -5,6 +5,8 @@ import { Helmet } from 'react-helmet'
 import './css/typography.css'
 import './css/styles.css'
 
+import logo from './images/logo.png'
+
 export default function Template({ children }) {
   return (
     <>
@@ -16,7 +18,7 @@ export default function Template({ children }) {
         <div class="grid">
           <div class="sidebar">
             <div class="logo">
-            <Link to="/"><img src="/static/images/logo.png" height="60px" width="60px" /><span>Rona design</span></Link>
+            <Link to="/"><img src={logo} height="60px" width="60px" /><span>Rona design</span></Link>
             </div>
             <div class="nav">
               <input type="checkbox" id="navbar-checkbox" class="navbar-checkbox" />
