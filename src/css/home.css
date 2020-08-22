@@ -1,0 +1,6 @@
+@media (min-width: 901px) {
+    .home {
+        display: grid;
+        grid-template-rows: 1fr 3fr;
+    }
+}

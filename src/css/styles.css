@@ -201,8 +201,8 @@ body {
 }
 h1 {
   font-family: 'hk_groteskblack';
-  font-size: 6.625rem;
-  line-height: 7.375rem;
+  font-size: 5rem;
+  line-height: 5.5625rem;
   position: relative;
   display: inline-block;
 }
@@ -224,7 +224,7 @@ ul {
 .logo {
   font-family: 'hk_groteskmedium';
   font-size: 1.833rem;
-  min-width: 250px;
+  min-width: 300px;
 }
 .logo a{
  text-decoration: none;
@@ -295,9 +295,7 @@ vertical-align: middle;
   }
 }
 @media (min-width: 901px) {
-  .content {
-    grid-template-rows: 1fr 3fr;
-  }
+  
   .grid {
     display: grid;
   }
@@ -314,7 +312,7 @@ vertical-align: middle;
     font-size: 12px;
   }
   .content {
-    padding-top: 50px;
+    padding-top: 20px;
   }
   .wrapper {
     padding: 20px;
