@@ -7,47 +7,36 @@ import './css/styles.css'
 
 export default function Template({ children }) {
   return (
-    <div>
+    <>
       <Helmet
-        title="Gatsby Default Starter"
-        meta={[{ name: 'description', content: 'Sample' }, { name: 'keywords', content: 'sample, something' }]}
+        title="Rona design"
+        meta={[{ name: 'description', content: 'Rona design studio' }, { name: 'keywords', content: 'design studio, web page creation' }]}
       />
-      <div
-        style={{
-          background: `rebeccapurple`,
-          marginBottom: `1.45rem`,
-        }}
-      >
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `1.45rem 1.0875rem`,
-          }}
-        >
-          <h1 style={{ margin: 0 }}>
-            <Link
-              to="/"
-              style={{
-                color: 'white',
-                textDecoration: 'none',
-              }}
-            >
-              Gatsby + Netlify Forms
-            </Link>
-          </h1>
+      <div class="wrapper">
+        <div class="grid">
+          <div class="sidebar">
+            <div class="logo">
+            <Link to="/"><img src="/static/images/logo.png" height="60px" width="60px" /><span>Rona design</span></Link>
+            </div>
+            <div class="nav">
+              <input type="checkbox" id="navbar-checkbox" class="navbar-checkbox" />
+              <nav class="menu">
+                <label for="navbar-checkbox" class="navbar-handle"></label>
+                <ul>
+                  <li> <Link to="/about-us/">- About us</Link></li>
+                  <li> <Link to="/works/">- Works</Link></li>
+                  <li> <Link to="/contact-us/">- Contact us</Link></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+          <div class="content">
+            {children}
+          </div>
         </div>
+
+
       </div>
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0px 1.0875rem 1.45rem`,
-          paddingTop: 0,
-        }}
-      >
-        {children}
-      </div>
-    </div>
+    </>
   )
 }
