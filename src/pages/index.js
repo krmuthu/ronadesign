@@ -1,9 +1,11 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Layout from '../layout'
 
 import '../css/home.css'
 
 export default function Index() {
+
+
   return (
     <Layout>
       <div className="home">

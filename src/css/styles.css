@@ -405,3 +405,20 @@ vertical-align: middle;
   right: 12px;
   z-index: 10;
 }
+
+
+#particle-canvas{
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 50%;
+  width: 50%;
+  z-index: -1;
+}
+
+@media (max-width: 900px) {
+  #particle-canvas{
+  bottom:0;
+  top: auto;
+  }
+}
