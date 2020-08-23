@@ -7,8 +7,8 @@ export default function Index() {
   return (
     <Layout>
       <div className="contact">
-      <h1>Become a client</h1>
-      <p>Our clients get the best results when they have our team dedicated to their business for extended periods of time. This is why we are looking for ongoing collaboration where our professionals are like your team members who just happen to be remote. Ready to move forward?</p>
+      <h1>Connect with us</h1>
+      <p>Like with your internal teams, we will be just a call away, to help with your digital transformation. Our first contact will be within 24 hours of the form submission.</p>
       </div>
     </Layout>
   )
