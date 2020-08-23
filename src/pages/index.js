@@ -11,7 +11,7 @@ export default function Index() {
       <div className="home">
         <div></div>
         <div>
-          <h1>We'll get<br />through this<br />together</h1>
+          <h1>Design from Good to Great</h1>
           <p>We’re still here, doing<br />what we do best.</p>
         </div>
       </div>
