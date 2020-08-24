@@ -25,7 +25,7 @@ function encode(data) {
 export default function Index() {
     const [state, setState] = React.useState({})
     const [checked, setChecked] = React.useState(true)
-  const recaptchaRef = React.createRef()
+    const recaptchaRef = React.createRef()
 
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value })
