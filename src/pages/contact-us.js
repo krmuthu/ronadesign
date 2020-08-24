@@ -82,12 +82,12 @@ const changeCaptcha = (value) => {
 		<label>Organization</label>
       </fieldset>
        <fieldset class="material">
-		<input type="text" autocomplete="off" name="email" onChange={handleChange} required />
+		<input type="email" autocomplete="off" name="email" onChange={handleChange} required />
         <hr/>
 		<label>Email</label>
       </fieldset>
        <fieldset class="material">
-		<input type="text" autocomplete="off" name="contact_number" onChange={handleChange} required />
+		<input type="tel"  pattern="[0-9]*" autocomplete="off" name="contact_number" onChange={handleChange} required />
         <hr/>
 		<label>Contact Number</label>
       </fieldset>
