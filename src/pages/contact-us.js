@@ -24,11 +24,16 @@ function encode(data) {
 
 export default function Index() {
     const [state, setState] = React.useState({})
+    const [checked, setChecked] = React.useState(true)
   const recaptchaRef = React.createRef()
 
   const handleChange = (e) => {
     setState({ ...state, [e.target.name]: e.target.value })
   }
+
+const changeCaptcha = (value) => {
+    setChecked(!value);
+}
   const handleSubmit = (e) => {
     e.preventDefault()
     const form = e.target
@@ -87,10 +92,10 @@ export default function Index() {
 		<label>Contact Number</label>
       </fieldset>
       <p>
-      <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+      <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} onChange={changeCaptcha} />
       </p>
         <p>
-          <button type="submit">Get in touch</button>
+          <button type="submit" disabled={checked} >Get in touch</button>
         </p>
         </form>
       </div>

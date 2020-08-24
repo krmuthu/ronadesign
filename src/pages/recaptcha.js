@@ -12,6 +12,9 @@ if (typeof RECAPTCHA_KEY === 'undefined') {
   Note this demo is specifically for Recaptcha v2
   `)
 }
+function changeCaptcha(value) {
+  console.log("Captcha value:", value);
+}
 
 function encode(data) {
   return Object.keys(data)
@@ -48,7 +51,7 @@ export default function Contact() {
     <Layout>
       <h1>reCAPTCHA 2</h1>
       <form
-        name="contact-recaptcha"
+        name="contact-us"
         method="post"
         action="/thanks/"
         data-netlify="true"
@@ -79,9 +82,9 @@ export default function Contact() {
             <textarea name="message" onChange={handleChange} />
           </label>
         </p>
-        <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} />
+        <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY}  onChange={()=>{console.log('hi')}} />
         <p>
-          <button type="submit">Send</button>
+          <button type="submit"  >Send</button>
         </p>
       </form>
     </Layout>
