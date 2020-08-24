@@ -223,7 +223,7 @@ ul {
 }
 .logo {
   font-family: 'hk_groteskmedium';
-  font-size: 1.833rem;
+  font-size: 1.6rem;
   min-width: 300px;
 }
 .logo a{
@@ -258,7 +258,6 @@ vertical-align: middle;
 .content {
   font-size: 2.5rem;
   display: grid;
-  padding-left: 40px;
 }
 .nav {
   font-size: 1.625rem;
@@ -295,7 +294,9 @@ vertical-align: middle;
   }
 }
 @media (min-width: 901px) {
-  
+  .content {
+    padding-left: 40px;
+}
   .grid {
     display: grid;
   }
