@@ -92,7 +92,7 @@ const changeCaptcha = (value) => {
 		<label>Contact Number</label>
       </fieldset>
       <p>
-      <Recaptcha ref={recaptchaRef} sitekey={RECAPTCHA_KEY} onChange={changeCaptcha} />
+      <Recaptcha ref={recaptchaRef} className="captcha" sitekey={RECAPTCHA_KEY} onChange={changeCaptcha} />
       </p>
         <p>
           <button type="submit" disabled={checked} >Get in touch</button>
