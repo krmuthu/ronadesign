@@ -205,16 +205,18 @@ h1 {
   line-height: 5.5625rem;
   position: relative;
   display: inline-block;
+  padding-bottom: 15px;
 }
 h1::before {
-  display: block;
-  position: absolute;
-  background-color:#1576fb;
-  content: "";
-  margin-left: -40px;
-  width: 3px;
-  margin-top: 5%;
-  height: 90%;
+    display: block;
+    position: absolute;
+    background-color: #1576fb;
+    content: "";
+    margin-left: -40px;
+    width: 3px;
+    top: 50%;
+    height: 60%;
+    transform: translate(-50%,-50%);
 }
 
 ul {
@@ -257,7 +259,6 @@ vertical-align: middle;
 
 .content {
   font-size: 2.5rem;
-  display: grid;
 }
 .nav {
   font-size: 1.625rem;
@@ -412,6 +413,7 @@ vertical-align: middle;
   position: fixed;
   top: 0;
   right: 0;
+  min-height:600px;
   height: 50%;
   width: 50%;
   z-index: -1;
@@ -420,6 +422,8 @@ vertical-align: middle;
 @media (max-width: 900px) {
   #particle-canvas{
   bottom:0;
+  width: 100%;
+  min-height:auto;
   top: auto;
   }
 }
