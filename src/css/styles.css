@@ -202,21 +202,10 @@ body {
 h1 {
   font-family: 'hk_groteskblack';
   font-size: 5rem;
-  line-height: 5.5625rem;
+  line-height: 4rem;
   position: relative;
   display: inline-block;
   padding-bottom: 15px;
-}
-h1::before {
-    display: block;
-    position: absolute;
-    background-color: #1576fb;
-    content: "";
-    margin-left: -40px;
-    width: 3px;
-    top: 50%;
-    height: 60%;
-    transform: translate(-50%,-50%);
 }
 
 ul {
@@ -297,6 +286,18 @@ vertical-align: middle;
   .content {
     padding-left: 40px;
 }
+h1::before {
+    display: block;
+    position: absolute;
+    background-color: #1576fb;
+    content: "";
+    margin-left: -40px;
+    width: 3px;
+    top: 50%;
+    height: 60%;
+    transform: translate(-50%,-50%);
+}
+
   .grid {
     display: grid;
   }
@@ -313,9 +314,20 @@ vertical-align: middle;
     font-size: 12px;
   }
   .content {
-    padding-top: 20px;
+    padding-top: 80px;
   }
   .wrapper {
+    padding: 45px;
+  }
+   .sidebar {
+       background: #fff;
+    height: 100px;
+    z-index: 1;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    grid-template-rows: 1fr 3fr;
     padding: 20px;
   }
   .sidebar {

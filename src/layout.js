@@ -8,10 +8,7 @@ import './css/styles.css'
 import logo from './images/logo.png'
 
 
-export default function Template({ children }) {
-
-
-  
+export default function Template({ children }) {  
   return (
     <>
       <Helmet
@@ -22,7 +19,7 @@ export default function Template({ children }) {
         <div class="grid">
           <div class="sidebar">
             <div class="logo">
-            <Link to="/"><img src={logo} height="60px" width="60px" /><span>Rona design</span></Link>
+            <Link to="/"><img src={logo} height="50px" width="50px" /><span>Rona design</span></Link>
             </div>
             <div class="nav">
               <input type="checkbox" id="navbar-checkbox" class="navbar-checkbox" />
