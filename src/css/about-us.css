@@ -1,7 +1,10 @@
-.about {
-        /*background-image: url('../images/about.jpg');*/
-
-    }
+.about  p{
+font-size: 1.5rem;
+max-width: 700px;
+}
+.commitment {
+    margin-top:30px;
+}
 @media (min-width: 901px) {
     
 }

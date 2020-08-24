@@ -249,6 +249,7 @@ vertical-align: middle;
   font-size: 2.5rem;
 }
 .nav {
+    
   font-size: 1.625rem;
   line-height: 2.5rem;
 }
@@ -319,14 +320,15 @@ h1::before {
     padding: 45px;
   }
    .sidebar {
+
+      border-bottom: 1px solid rgba(0,0,0,.1);
        background: #fff;
-    height: 100px;
+    height: 90px;
     z-index: 1;
     position: fixed;
     top: 0px;
     left: 0px;
     right: 0px;
-    grid-template-rows: 1fr 3fr;
     padding: 20px;
   }
   .sidebar {
