@@ -5,6 +5,7 @@ max-width: 700px;
 
 button:disabled {
     opacity: .3;
+    font-size: 2rem;
 }
 @media (max-width: 900px) {
     button{

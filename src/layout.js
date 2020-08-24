@@ -26,6 +26,7 @@ export default function Template({ children }) {
               <nav class="menu">
                 <label for="navbar-checkbox" class="navbar-handle"></label>
                 <ul>
+                  <li> <Link to="/">- Home</Link></li>
                   <li> <Link to="/about-us/">- About us</Link></li>
                   <li> <Link to="/works/">- Works</Link></li>
                   <li> <Link to="/contact-us/">- Contact us</Link></li>
