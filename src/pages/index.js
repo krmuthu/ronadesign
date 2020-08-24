@@ -4,6 +4,9 @@ import Layout from '../layout'
 import '../css/home.css'
 
 
+export default function Index() {
+
+
   useEffect(() => {
     // Create Particle class
 var Particle = function (parent) {
@@ -261,10 +264,6 @@ var options = {
 var particleCanvas = new ParticleNetwork(canvasDiv, options);
 
   });
-
-  
-export default function Index() {
-
 
   return (
     <Layout>
