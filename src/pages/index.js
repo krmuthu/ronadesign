@@ -270,8 +270,8 @@ var particleCanvas = new ParticleNetwork(canvasDiv, options);
       <div className="home">
         <div></div>
         <div>
+            <p>Expertise that Converts</p>
           <h1>Design from Good to Great</h1>
-          <p>We’re still here, doing<br />what we do best.</p>
         </div>
       </div>
     </Layout>
