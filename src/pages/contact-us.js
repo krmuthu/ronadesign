@@ -69,27 +69,27 @@ const changeCaptcha = (value) => {
       <fieldset class="material">
 		<input type="text" autocomplete="off"  name="full_name" onChange={handleChange} required />
         <hr/>
-		<label>Full Name</label>
+		<label htmlFor="full_name" >Full Name</label>
       </fieldset>
       <fieldset class="material">
 		<input type="text" autocomplete="off"  name="title" onChange={handleChange} required />
         <hr/>
-		<label>Title</label>
+		<label htmlFor="title"  >Title</label>
       </fieldset>
       <fieldset class="material">
 		<input type="text" autocomplete="off"  name="organization" onChange={handleChange} required />
         <hr/>
-		<label>Organization</label>
+		<label htmlFor="organization" >Organization</label>
       </fieldset>
        <fieldset class="material">
 		<input type="email" autocomplete="off" name="email" onChange={handleChange} required />
         <hr/>
-		<label>Email</label>
+		<label htmlFor="email" >Email</label>
       </fieldset>
        <fieldset class="material">
 		<input type="tel"  pattern="[0-9]*" autocomplete="off" name="contact_number" onChange={handleChange} required />
         <hr/>
-		<label>Contact Number</label>
+		<label htmlFor="contact_number"  >Contact Number</label>
       </fieldset>
       <p>
       <Recaptcha ref={recaptchaRef} className="captcha" sitekey={RECAPTCHA_KEY} onChange={changeCaptcha} />

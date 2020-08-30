@@ -261,7 +261,7 @@ var options = {
   speed: 'slow',
   density: 'high'
 };
-var particleCanvas = new ParticleNetwork(canvasDiv, options);
+new ParticleNetwork(canvasDiv, options);
 
   });
 

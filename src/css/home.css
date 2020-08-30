@@ -1,4 +1,6 @@
-
+.home h1{
+    width: 600px;
+}
 @media (min-width: 901px) {
     .home {
         display: grid;

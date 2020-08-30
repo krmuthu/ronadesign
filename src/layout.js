@@ -1,10 +1,9 @@
-import React, {useEffect} from 'react'
+import React from 'react'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 import './css/typography.css'
 import './css/styles.css'
-
 import logo from './images/logo.png'
 
 
@@ -12,19 +11,19 @@ export default function Template({ children }) {
   return (
     <>
       <Helmet
-        title="Rona design"
+        title="Rona Design"
         meta={[{ name: 'description', content: 'Rona design studio' }, { name: 'keywords', content: 'design studio, web page creation' }]}
       />
       <div class="wrapper">
         <div class="grid">
           <div class="sidebar">
             <div class="logo">
-            <Link to="/"><img src={logo} height="50px" width="50px" /><span>Rona design</span></Link>
+            <Link to="/"><img src={logo} alt="Rona Design" height="50px" width="50px" /><span>Rona design</span></Link>
             </div>
             <div class="nav">
-              <input type="checkbox" id="navbar-checkbox" class="navbar-checkbox" />
+              <input type="checkbox" id="navbar-checkbox" class="navbar-checkbox" name="navbar-checkbox" />
               <nav class="menu">
-                <label for="navbar-checkbox" class="navbar-handle"></label>
+                <label for="navbar-checkbox"  htmlFor="navbar-checkbox"  class="navbar-handle"></label>
                 <ul>
                   <li> <Link to="/">- Home</Link></li>
                   <li> <Link to="/about-us/">- About us</Link></li>
