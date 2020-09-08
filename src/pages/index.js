@@ -1,11 +1,11 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import Layout from '../layout'
 
 import '../css/home.css'
 
 
 export default function Index() {
-
+  
   useEffect(() => {
    const width =  window.innerWidth || document.body.clientWidth;
     var Particle = function (parent) {
@@ -202,8 +202,11 @@ export default function Index() {
       <div className="home">
         <div></div>
         <div className="header">
-          <p class="glitch" data-text="Expertise that Converts">Expertise that Converts</p>
-          <h1 >Design from Good to Great</h1>
+          <p>Expertise that Converts</p>
+          <div className="container">
+            <h1 className="header1" ><span >Design from</span><span>Good to Great</span></h1>
+            <h1 className="header2" ><span >Website</span><span>Leads to Sales</span></h1>
+          </div>
         </div>
       </div>
     </Layout>
