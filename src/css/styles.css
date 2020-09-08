@@ -419,22 +419,3 @@ h1::before {
   z-index: 10;
 }
 
-
-#particle-canvas{
-  position: fixed;
-  top: 0;
-  right: 0;
-  min-height:600px;
-  height: 50%;
-  width: 50%;
-  z-index: -1;
-}
-
-@media (max-width: 900px) {
-  #particle-canvas{
-  bottom:0;
-  width: 100%;
-  min-height:auto;
-  top: auto;
-  }
-}

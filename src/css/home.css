@@ -1,9 +1,30 @@
-.home h1{
-    width: 600px;
+#particle-canvas {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events: none;
 }
+/* The animation code */
+@keyframes example {
+    from {margin-left:-50px;opacity: 0; letter-spacing: 2px;}
+    to {margin-left:0;opacity: 1;}
+  }
+.header p{
+    animation-name: example;
+    animation-duration: .5s;
+}
+
+@media (max-width: 900px) {}
+
 @media (min-width: 901px) {
     .home {
         display: grid;
         grid-template-rows: 150px 1fr;
     }
+    .home h1 {
+        width: 600px;
+    }
 }
+

@@ -14,16 +14,16 @@ export default function Template({ children }) {
         title="Rona Design"
         meta={[{ name: 'description', content: 'Rona design studio' }, { name: 'keywords', content: 'design studio, web page creation' }]}
       />
-      <div class="wrapper">
-        <div class="grid">
-          <div class="sidebar">
-            <div class="logo">
+      <div className="wrapper">
+        <div className="grid">
+          <div className="sidebar">
+            <div className="logo">
             <Link to="/"><img src={logo} alt="Rona Design" height="50px" width="50px" /><span>Rona design</span></Link>
             </div>
-            <div class="nav">
-              <input type="checkbox" id="navbar-checkbox" class="navbar-checkbox" name="navbar-checkbox" />
-              <nav class="menu">
-                <label for="navbar-checkbox"  htmlFor="navbar-checkbox"  class="navbar-handle"></label>
+            <div className="nav">
+              <input type="checkbox" id="navbar-checkbox" className="navbar-checkbox" name="navbar-checkbox" />
+              <nav className="menu">
+                <label htmlFor="navbar-checkbox"  className="navbar-handle"></label>
                 <ul>
                   <li> <Link to="/">- Home</Link></li>
                   <li> <Link to="/about-us/">- About us</Link></li>
@@ -33,7 +33,7 @@ export default function Template({ children }) {
               </nav>
             </div>
           </div>
-          <div class="content">
+          <div className="content">
             {children}
           </div>
         </div>
