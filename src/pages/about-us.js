@@ -6,7 +6,7 @@ import '../css/about-us.css'
 export default function Index() {
   return (
     <Layout>
-        <div class="about">
+        <div className="about">
       <h1>We</h1>
       <p>Are a team of web designers, web developers, and writers who have worked with some of the world’s leading brands, building a portfolio of great web pages and products. Ronadesign is a creation of our part-time efforts to bring our expertise to the rest of the world.</p>
       
