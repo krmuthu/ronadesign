@@ -387,6 +387,7 @@ ul {
     position: absolute;
     bottom: -350px;
     width: 100%;
+    font-size: 22px;
     transition: bottom .5s ease-out;
   }
   #navbar-checkbox:checked+.menu ul{
