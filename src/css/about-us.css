@@ -14,12 +14,11 @@
 
 @media (min-width: 901px) {
     .about {
-        padding-top: 100px;
+        padding-top: 50px;
     }
     .about p {
         font-size: 1.3rem;
-        max-width: 700px;
-        line-height: 1.6rem;
-        max-width: 500px;
+        line-height: 2rem;
+        max-width: 600px;
     }
 }

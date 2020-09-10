@@ -285,11 +285,8 @@ ul {
     text-decoration: none;
     color: #000;
   }
-  .menu a[aria-current="page"] {
+  .menu li:hover a, .menu a[aria-current="page"] {
     color: #1576fb;
-  }
-  .menu li:hover a {
-    color:rgba(0,0,0,.5);
   }
   h1::before {
     display: block;
