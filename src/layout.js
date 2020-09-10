@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
@@ -7,8 +7,80 @@ import './css/styles.css'
 import logo from './images/logo.png'
 
 
-export default function Template({ children }) {  
+export default function Template({ children, currentPage }) {  
   const [menustate, setMenuState] = React.useState(false)
+/*
+  useEffect(() => {
+    class Circle {
+      constructor (element, options = {}) {
+        this.element = element
+        this.options = Object.assign({}, {
+          colors: ['#ff0', '#f0f', '#0ff'],
+          duration: 1,
+          lightenMask: false,
+          onClick: function () {
+            return false
+          }
+        }, options)
+        this.index = 0
+        this.boundClickHandler = event => this.clickHandler(event);
+        this.init()
+      }
+      
+      init() {
+        this.element.addEventListener('click', this.boundClickHandler)
+        this.setElementBackgroundColor(this.options.colors[0])
+      }
+      
+      clickHandler(event) {
+        this.incrementIndex()
+        const circle = document.createElement('div')
+        this.options.lightenMask ? circle.classList.add('circle', 'circle--mask') : circle.classList.add('circle')
+        circle.style.top = `${event.clientY}px`
+        circle.style.left = `${event.clientX}px`
+        circle.style.animationDuration = `${this.options.duration}s`
+        circle.style.backgroundColor = this.options.colors[this.index]
+        this.element.appendChild(circle)
+        this.destroyThirdCircle()
+        this.options.onClick(this.options.colors[this.index])
+      }
+      setElementBackgroundColor(color) {
+        this.element.style.backgroundColor = color
+      }
+      incrementIndex() {
+        this.index++
+        
+        if (this.index === this.options.colors.length) {
+          this.index = 0
+        }
+      }
+      destroyThirdCircle() {
+        if (document.querySelectorAll('.circle').length === 3) {
+          const firstCircle = document.querySelectorAll('.circle')[0]
+          firstCircle.parentNode.removeChild(firstCircle)
+        }
+      }
+      destroyAllCircles() {
+        ;[].forEach.call(document.querySelectorAll('.circle'), circle => {
+          circle.parentNode.removeChild(circle)
+        })
+      }
+      destroy() {
+        this.index = 0
+        this.element.removeEventListener('click', this.boundClickHandler)
+        this.destroyAllCircles()
+      }
+    }
+    
+    const circle = new Circle(document.querySelector('.js-circle'), {
+      colors: ['#1576fb', '#fff', '#e17055', '#fab1a0', '#ffeaa7', '#fdcb6e'],
+      onClick: function (currentColor) {
+        console.log('New color : ' + currentColor)
+      }
+    })
+    
+    
+  })*/ 
   
   const onChangeMenu = (e) => {
     setMenuState(!menustate);
@@ -18,6 +90,7 @@ export default function Template({ children }) {
       <Helmet
         title="Rona Design"
         meta={[{ name: 'description', content: 'Rona design studio' }, { name: 'keywords', content: 'design studio, web page creation' }]}
+        
       />
       <div className="wrapper">
         <div className="grid">

@@ -17,7 +17,7 @@
     animation-duration: .5s;
 }
 
-@media (max-width: 900px) {}
+@media (max-width: 900px) {  }
 
 @media (min-width: 901px) {
     .home {
@@ -27,6 +27,26 @@
     .home h1 {
         width: 600px;
     }
+    .homeRoot .menu a, .homeRoot .menu a:active, .homeRoot .menu a:visited {
+      text-decoration: none;
+      color: rgba(255,255,255,.7);
+    }
+    .homeRoot .menu a[aria-current="page"] {
+      color: #fff;
+    }
+    .logo span, body, .menu a {
+      transition:background-color .3s;
+    }
+    body.homeRoot {
+      background-color:#1576fb;  
+    }
+    body.homeRoot {
+      color: #fff;
+    }
+    .homeRoot .logo span{
+      color: #fff;
+    }
+
 }
 
 
@@ -39,6 +59,7 @@
     
     
 }
+
 
 .header1 span, .header2 span {
   width: 100%;

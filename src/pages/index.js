@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Layout from '../layout'
+import { Helmet } from 'react-helmet'
 
 import '../css/home.css'
 
@@ -11,6 +12,7 @@ export default function Index() {
     var Particle = function (parent) {
       this.canvas = parent.canvas;
       this.ctx = parent.ctx;
+      this.size = 1.5+Math.random()*1.5;
 
       this.x = this.canvas.width / 2 + Math.random() * this.canvas.width / 2;
       this.y = Math.random() * this.canvas.height / 2;
@@ -37,9 +39,9 @@ export default function Index() {
 
       // Draw particle
       this.ctx.beginPath();
-      this.ctx.fillStyle = '#666'
-      this.ctx.globalAlpha = 0.7;
-      this.ctx.arc(this.x, this.y, 1.5, 0, 2 * Math.PI);
+      this.ctx.fillStyle = '#000'
+      this.ctx.globalAlpha = 1;
+      this.ctx.arc(this.x, this.y, this.size, 0, 2 * Math.PI);
       this.ctx.fill();
     };
 
@@ -54,7 +56,7 @@ export default function Index() {
 
       // Set options
       this.options = {
-        density: 15000
+        density: 30000
       };
 
       this.init();
@@ -171,8 +173,8 @@ export default function Index() {
           }
 
           this.ctx.beginPath();
-          this.ctx.strokeStyle = '#666';
-          this.ctx.globalAlpha = (160 - distance) / 500;
+          this.ctx.strokeStyle = '#000';
+          this.ctx.globalAlpha = (160 - distance) / 300;
           this.ctx.lineWidth = 1;
           this.ctx.moveTo(this.particles[i].x, this.particles[i].y);
           this.ctx.lineTo(this.particles[j].x, this.particles[j].y);
@@ -198,17 +200,24 @@ export default function Index() {
   });
 
   return (
-    <Layout>
+    <>
+    <Helmet
+        bodyAttributes={{
+          class: "homeRoot"
+      }}
+      />
+    <Layout currentPage="home">
       <div className="home">
         <div></div>
         <div className="header">
           <p>Expertise that Converts</p>
           <div className="container">
-            <h1 className="header1" ><span >Design from</span><span>Good to Great</span></h1>
+          <h1 className="header1" ><span >Design from</span><span>Good to Great</span></h1>
             <h1 className="header2" ><span >Website</span><span>Leads to Sales</span></h1>
           </div>
         </div>
       </div>
     </Layout>
+    </>
   )
 }
