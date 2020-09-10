@@ -27,9 +27,16 @@
     .home h1 {
         width: 600px;
     }
+    .homeRoot h1:before {
+      background-color:#fff;
+    }
     .homeRoot .menu a, .homeRoot .menu a:active, .homeRoot .menu a:visited {
       text-decoration: none;
       color: rgba(255,255,255,.7);
+    }
+    .homeRoot .menu a:hover{
+      text-decoration: none;
+      color: rgba(255,255,255,.4);
     }
     .homeRoot .menu a[aria-current="page"] {
       color: #fff;

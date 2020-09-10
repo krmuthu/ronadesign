@@ -9,12 +9,14 @@
 
 .works h1 {
   font-size: 3.5rem;
-  line-height: 3rem;
+  line-height: 3.5rem;
 }
 
 .works p {
-  font-size: 1.5rem;
-  max-width: 700px;
+  font-size: 1.3rem;
+    max-width: 700px;
+    line-height: 1.6rem;
+    margin-bottom:50px ;
 }
 
 .active.cards {

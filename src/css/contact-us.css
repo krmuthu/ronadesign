@@ -1,51 +1,68 @@
-.contact p{
-font-size: 1.5rem;
-max-width: 700px;
+.contact p {
+  font-size: 1.5rem;
+  max-width: 700px;
 }
+
+@media (min-width: 901px) {
+  .contact p {
+    font-size: 1.3rem;
+    max-width: 600px;
+    line-height: 1.6rem;
+    margin-bottom: 50px;
+  }
+}
+
 button:disabled {
-    opacity: .3;
+  opacity: .3;
 }
+
 @media (max-width: 900px) {
-    button{
-        width:100%;
-    }
-    .captcha{
-        width: 100%;
-    }
+  button {
+    width: 100%;
+  }
+  .captcha {
+    width: 100%;
+  }
 }
+
 form {
   margin: 0px;
   padding: 0px;
 }
+
 .material {
-    max-width:700px;
+  max-width: 700px;
   position: relative;
   padding: 0;
   margin: 20px 0;
   border: none;
   overflow: visible;
 }
+
 .material input {
   box-sizing: border-box;
   width: 100%;
-  padding: 10px 0 ;
+  padding: 10px 0;
   border: none;
   border-radius: 0;
   box-shadow: none;
   border-bottom: 1px solid #666666;
   font-size: 1.375rem;
   outline: none;
-  color:#000;
+  color: #000;
   cursor: text;
-  background:transparent;
+  background: transparent;
 }
+
 .material input::-webkit-input-placeholder {
   -webkit-transition: color 300ms ease;
   transition: color 300ms ease;
 }
+
 .material input:not(:focus)::-webkit-input-placeholder {
   color: transparent;
 }
+
 .material hr {
   content: '';
   display: block;
@@ -63,40 +80,53 @@ form {
   -webkit-transition: all 200ms ease-out;
   transition: all 200ms ease-out;
   -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  transform: scaleX(0);
   visibility: hidden;
   z-index: 10;
 }
-.material input:focus ~ hr {
+
+.material input:focus~hr {
   -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  transform: scaleX(1);
   visibility: visible;
 }
-button{
-    font-family: 'hk_groteskmedium';
-    color: #fff;
-    background: #1576fb;
-    outline: none;
-    border: 0;
-    font-size:1.75rem;
-    padding: 20px 60px;
+
+button {
+  font-family: 'hk_groteskmedium';
+  color: #fff;
+  background: #1576fb;
+  outline: none;
+  border: 0;
+  font-size: 1.75rem;
+  padding: 20px 60px;
 }
+
 .material label {
   position: absolute;
   top: 10px;
   left: 0px;
   font-size: 1.375rem;
-  color: #aaaaaa;
+  color: #666;
   -webkit-transform-origin: 0 -150%;
-          transform-origin: 0 -150%;
+  transform-origin: 0 -150%;
   -webkit-transition: -webkit-transform 300ms ease;
   transition: -webkit-transform 300ms ease;
   transition: transform 300ms ease;
   transition: transform 300ms ease, -webkit-transform 300ms ease;
   pointer-events: none;
 }
-.material input:focus ~ label,
-.material input:valid ~ label {
+
+.material input:focus~label, .material input:valid~label {
   -webkit-transform: scale(0.6);
-          transform: scale(0.6);
+  transform: scale(0.6);
+}
+
+@media (min-width: 901px) {
+  button {
+    font-size: 1.4rem;
+    padding: 12px 44px;
+  }
+  .material label {
+    top: 25px;
+  }
 }

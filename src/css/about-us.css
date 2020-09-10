@@ -1,14 +1,25 @@
-.about  p{
-font-size: 1.5rem;
-max-width: 700px;
+.about p {
+    font-size: 1.5rem;
+    max-width: 700px;
 }
-.about h1{
+
+.about h1 {
     font-size: 4rem;
     line-height: 4rem;
 }
+
 .commitment {
-    margin-top:30px;
+    margin-top: 30px;
 }
+
 @media (min-width: 901px) {
-    
+    .about {
+        padding-top: 100px;
+    }
+    .about p {
+        font-size: 1.3rem;
+        max-width: 700px;
+        line-height: 1.6rem;
+        max-width: 500px;
+    }
 }
