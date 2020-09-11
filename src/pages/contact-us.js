@@ -66,37 +66,37 @@ const changeCaptcha = (value) => {
         <noscript>
           <p>This form won’t work with Javascript disabled</p>
         </noscript>
-      <fieldset class="material">
-		<input type="text" autocomplete="off"  name="full_name" onChange={handleChange} required />
+      <fieldset className="material">
+		<input type="text" autoComplete="off" placeholder=" " autoFocus={true} name="full_name" onChange={handleChange} required />
         <hr/>
 		<label htmlFor="full_name" >Full Name</label>
       </fieldset>
-      <fieldset class="material">
-		<input type="text" autocomplete="off"  name="title" onChange={handleChange} required />
+      <fieldset className="material">
+		<input type="text" autoComplete="off" placeholder=" " name="title" onChange={handleChange} required />
         <hr/>
 		<label htmlFor="title"  >Title</label>
       </fieldset>
-      <fieldset class="material">
-		<input type="text" autocomplete="off"  name="organization" onChange={handleChange} required />
+      <fieldset className="material">
+		<input type="text" autoComplete="off" placeholder=" " name="organization" onChange={handleChange} required />
         <hr/>
 		<label htmlFor="organization" >Organization</label>
       </fieldset>
-       <fieldset class="material">
-		<input type="email" autocomplete="off" name="email" onChange={handleChange} required />
+       <fieldset className="material">
+		<input type="email" autoComplete="off" placeholder=" " name="email" onChange={handleChange} required />
         <hr/>
 		<label htmlFor="email" >Email</label>
       </fieldset>
-       <fieldset class="material">
-		<input type="tel"  pattern="[0-9]*" autocomplete="off" name="contact_number" onChange={handleChange} required />
+       <fieldset className="material">
+		<input type="tel"  pattern="[0-9]*" autoComplete="off" placeholder=" " name="contact_number" onChange={handleChange} required />
         <hr/>
 		<label htmlFor="contact_number"  >Contact Number</label>
       </fieldset>
-      <p>
+      
       <Recaptcha ref={recaptchaRef} className="captcha" sitekey={RECAPTCHA_KEY} onChange={changeCaptcha} />
-      </p>
-        <p>
+      
+       
           <button type="submit" disabled={checked} >Get in touch</button>
-        </p>
+       
         </form>
       </div>
     </Layout>

@@ -116,7 +116,7 @@ button {
   pointer-events: none;
 }
 
-.material input:focus~label, .material input:valid~label {
+.material input:not(:placeholder-shown)~label, .material input:focus~label, .material input:valid~label {
   -webkit-transform: scale(0.6);
   transform: scale(0.6);
 }
@@ -124,9 +124,9 @@ button {
 @media (min-width: 901px) {
   button {
     font-size: 1.4rem;
-    padding: 12px 44px;
+    padding: 12px 44px 16px 44px;
   }
   .material label {
-    top: 25px;
+    top: 20px;
   }
 }
