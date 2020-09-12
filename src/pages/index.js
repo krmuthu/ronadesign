@@ -6,13 +6,79 @@ import '../css/home.css'
 
 
 export default function Index() {
-  
+
+  let circle = null;
+
+
   useEffect(() => {
-   const width =  window.innerWidth || document.body.clientWidth;
+    class Circle {
+      constructor(element, options = {}) {
+        this.element = element
+        this.options = Object.assign({}, {
+          colors: ['#ff0', '#f0f', '#0ff'],
+          duration: 1,
+          lightenMask: false,
+          onClick: function () {
+            return false
+          }
+        }, options)
+        this.index = 0
+        this.boundClickHandler = event => this.clickHandler(event);
+        this.init()
+      }
+
+      init() {
+        console.log('event added')
+        this.element.addEventListener('click', this.boundClickHandler)
+        this.setElementBackgroundColor(this.options.colors[0])
+      }
+
+      clickHandler(event) {
+        this.incrementIndex()
+        const circle = document.createElement('div')
+        this.options.lightenMask ? circle.classList.add('circle', 'circle--mask') : circle.classList.add('circle')
+        circle.style.top = `${event.clientY}px`
+        circle.style.left = `${event.clientX}px`
+        circle.style.animationDuration = `${this.options.duration}s`
+        circle.style.backgroundColor = this.options.colors[this.index]
+        this.element.appendChild(circle)
+        this.destroyThirdCircle()
+        this.options.onClick(this.options.colors[this.index])
+      }
+      setElementBackgroundColor(color) {
+        this.element.style.backgroundColor = color
+      }
+      incrementIndex() {
+        this.index++
+
+        if (this.index === this.options.colors.length) {
+          this.index = 0
+        }
+      }
+      destroyThirdCircle() {
+        if (document.querySelectorAll('.circle').length === 3) {
+          const firstCircle = document.querySelectorAll('.circle')[0]
+          firstCircle.parentNode.removeChild(firstCircle)
+        }
+      }
+      destroyAllCircles() {
+        ;[].forEach.call(document.querySelectorAll('.circle'), circle => {
+          circle.parentNode.removeChild(circle)
+        })
+      }
+      destroy() {
+        this.index = 0
+        console.log('event removed')
+        this.element.removeEventListener('click', this.boundClickHandler)
+        this.destroyAllCircles()
+      }
+    }
+
+    const width = window.innerWidth || document.body.clientWidth;
     var Particle = function (parent) {
       this.canvas = parent.canvas;
       this.ctx = parent.ctx;
-      this.size = 1.5+Math.random()*1.5;
+      this.size = 1.5 + Math.random() * 1.5;
 
       this.x = this.canvas.width / 2 + Math.random() * this.canvas.width / 2;
       this.y = Math.random() * this.canvas.height / 2;
@@ -89,12 +155,10 @@ export default function Index() {
 
       // Add resize listener to canvas
       window.addEventListener('resize', function () {
-
         // Check if div has changed size
         if (this.canvasDiv.offsetWidth === this.canvasDiv.size.width && this.canvasDiv.offsetHeight === this.canvasDiv.size.height) {
           return false;
         }
-
         // Scale canvas
         this.canvas.width = this.canvasDiv.size.width = this.canvasDiv.offsetWidth;
         this.canvas.height = this.canvasDiv.size.height = this.canvasDiv.offsetHeight;
@@ -149,7 +213,7 @@ export default function Index() {
         };
         this.particles.push(this.mouseParticle);
       }.bind(this));
-    
+
       // Update canvas
       requestAnimationFrame(this.update.bind(this));
     }
@@ -192,32 +256,51 @@ export default function Index() {
         div.style[property] = styles[property];
       }
     }
-    if(width > 900){
+    
+    if (width > 900) {
       var canvasDiv = document.getElementById('particle-canvas');
       new ParticleNetwork(canvasDiv);
+
+      const circleElm = document.querySelector('body');
+      console.log(document, circleElm)
+      if (circleElm) {
+        circle = new Circle(circleElm, {
+          colors: ['#1576fb', '#8a15fb', '#f0255d', '#f84110', '#e60e12', '#e6a10e'],
+          onClick: function (currentColor) {
+            console.log('New color : ' + currentColor)
+          }
+        })
+      }
+    }
+    return ()=> {
+      if(circle){
+        const circleElm = document.querySelector('body');
+        circleElm.style.backgroundColor = '';
+        circle.destroy();
+      }
     }
 
   });
 
   return (
     <>
-    <Helmet
+      <Helmet
         bodyAttributes={{
-          class: "homeRoot"
-      }}
+          class: "homeRoot js-circle"
+        }}
       />
-    <Layout currentPage="home">
-      <div className="home">
-        <div></div>
-        <div className="header">
-          <p>Expertise that Converts</p>
-          <div className="container">
-          <h1 className="header1" ><span >Design from</span><span>Good to Great</span></h1>
-            <h1 className="header2" ><span >Website</span><span>Leads to Sales</span></h1>
+      <Layout currentPage="home">
+        <div className="home">
+          <div></div>
+          <div className="header">
+            <p>Expertise that Converts</p>
+            <div className="container">
+              <h1 className="header1" ><span >Design from</span><span>Good to Great</span></h1>
+              <h1 className="header2" ><span >Website</span><span>Leads to Sales</span></h1>
+            </div>
           </div>
         </div>
-      </div>
-    </Layout>
+      </Layout>
     </>
   )
 }

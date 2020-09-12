@@ -17,9 +17,51 @@
     animation-duration: .5s;
 }
 
-@media (max-width: 900px) {  }
+@media (max-width: 900px) { 
+  
+}
 
 @media (min-width: 901px) {
+
+
+.js-circle {
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+.js-circle .circle {
+  position: absolute;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  animation: circleGrowUp 1s ease-in forwards;
+}
+.js-circle .circle--mask:after {
+  content: '';
+  display: block;
+  position: absolute;
+  z-index: 1;
+  top: -100px;
+  left: -100px;
+  right: -100px;
+  bottom: -100px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+}
+
+@keyframes circleGrowUp {
+  from {
+    width: 0;
+    height: 0;
+  }
+  to {
+    width: 300vw;
+    height: 300vw;
+  }
+}
+  .logo .imgHolder {
+    background-color: transparent;
+  }
     .home {
         display: grid;
         grid-template-rows: 150px 1fr;
@@ -151,3 +193,4 @@
     clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
   }
 }
+

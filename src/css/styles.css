@@ -229,12 +229,12 @@ ul {
   display: inline-block;
   background-color: #1576fb;
   border-radius:50% ;
-  padding:11px 13px 4px 16px;
   border:1px solid white;
+  padding:7px 9px 0px 12px;
   vertical-align: middle;
 }
 .logo .imgHolder img{
-  transform:scale(.65);
+  transform:scale(.55);
 }
 
 .logo span {
@@ -318,10 +318,7 @@ ul {
 }
 
 @media (max-width: 900px) {
-  .logo .imgHolder {
-    padding:7px 9px 0px 12px;
-  }
-
+  
 .logo .imgHolder img{
   transform:scale(.5);
 }
@@ -457,41 +454,3 @@ ul {
   top: 0.65em;
 }
 
-/*
-
-.js-circle {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-.js-circle .circle {
-  position: absolute;
-  z-index: -1;
-  border-radius: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  animation: circleGrowUp 1s ease-in forwards;
-}
-.js-circle .circle--mask:after {
-  content: '';
-  display: block;
-  position: absolute;
-  z-index: 1;
-  top: -100px;
-  left: -100px;
-  right: -100px;
-  bottom: -100px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-}
-
-@keyframes circleGrowUp {
-  from {
-    width: 0;
-    height: 0;
-  }
-  to {
-    width: 300vw;
-    height: 300vw;
-  }
-}
-*/
