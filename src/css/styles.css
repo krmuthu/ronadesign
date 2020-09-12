@@ -318,6 +318,13 @@ ul {
 }
 
 @media (max-width: 900px) {
+  .logo .imgHolder {
+    padding:7px 9px 0px 12px;
+  }
+
+.logo .imgHolder img{
+  transform:scale(.5);
+}
   html {
     font-size: 12px;
   }
