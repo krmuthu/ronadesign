@@ -24,7 +24,7 @@ export default function Index() {
       }
       next = 0;
     } if (next < -1) {
-      if (curPage > 0){
+      if (curPage > 0) {
         curPage--;
         isScrolling = true;
         goPage();
@@ -44,28 +44,18 @@ export default function Index() {
 
     setTimeout(() => {
       screenNext.classList.add('active')
+      curScreen.classList.remove('top')
     }, 700);
-
 
     setTimeout(() => { isScrolling = false; }, 2000);
 
   }
   useEffect(() => {
-    const screenOne = document.querySelector('.screen.one');
-    screenOne.classList.add('active')
-    /*const screenOneHeader = document.querySelector('.screen.one h1');
-      const screenOnePara = document.querySelector('.screen.one p');
-  
-      
-      /*screenOneHeader.classList.add('activating')
-      screenOnePara.classList.add('activating')
-      setTimeout(() => {
-        screenOneHeader.classList.add('active')
-      }, 500);
-  
-      setTimeout(() => {
-        screenOnePara.classList.add('active')
-      }, 800);*/
+    const alreadyActive = document.querySelector('.active');
+    if (!alreadyActive) {
+      const screenOne = document.querySelector('.screen.one');
+      screenOne.classList.add('active')
+    }
 
     const width = window.innerWidth || document.body.clientWidth;
     if (width > 900) {

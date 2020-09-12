@@ -41,6 +41,17 @@
 }
 
 @media (min-width: 901px) {
+  .works .screen h1 {
+    font-size: 3.5rem;
+    line-height: 3.5rem;
+  }
+  .works h1 {
+    font-size: 2.5rem;
+    line-height: 1rem;
+  }
+  .works p {
+    margin-bottom:75px;
+  }
   .screen {
     position: absolute;
   }
@@ -52,15 +63,16 @@
   }
   .screen .img-holder img {
     max-height: calc(50vh);
+    transform: translateY(103%);
   }
-  .screen h1 span,.screen p span, .screen .img-holder {
+  .screen h1 span,.screen p span {
     opacity: 0;
     transform: translate(0, 20px);
-    transition: opacity .5s, transform .5s, filter .5s;
+    transition: opacity .5s, transform .5s;
   }
   .screen .img-holder {
-    filter: blur(2px);
-    transition-delay: .6s;
+    overflow: hidden;
+   
   }
   
   .screen h1:before {
@@ -68,7 +80,6 @@
     transform: translate(-50%, -70%);
     transition: opacity .5s, transform .5s;
   }
-  .works h1 span:nth-child(1) {}
   .works h1 span:nth-child(2) {
     transition-delay: .2s;
   }
@@ -78,23 +89,30 @@
   .works p span:nth-child(2) {
     transition-delay: .5s;
   }
-  .active.screen .img-holder {
-    filter: blur(0);
+  .active.screen .img-holder img {
+    transform: translateY(0%);
+
+    transition: transform .5s;
   }
   .active.screen h1:before {
     transform: translate(-50%, -50%);
     opacity: 1;
   }
-  .active.screen h1 span, .active.screen p span , .active.screen .img-holder {
+  .active.screen h1 span, .active.screen p span {
     transform: translate(0, 0);
     opacity: 1;
   }
   .active.screen h1:before {
     opacity: 1;
   }
-  .top.screen h1 span, .top.screen p span, .top.screen .img-holder {
+  .top.screen h1 span, .top.screen p span {
     transform: translate(0, -10px);
     opacity: 0;
+  }
+  .top.screen .img-holder img {
+    transform: translateY(-103%);
+
+    transition: transform .5s;
   }
   /*.works h1.activating span, .works p.activating span {
     animation: header-enter .5s;
