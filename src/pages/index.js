@@ -28,7 +28,6 @@ export default function Index() {
       }
 
       init() {
-        console.log('event added')
         this.element.addEventListener('click', this.boundClickHandler)
         this.setElementBackgroundColor(this.options.colors[0])
       }
@@ -68,7 +67,6 @@ export default function Index() {
       }
       destroy() {
         this.index = 0
-        console.log('event removed')
         this.element.removeEventListener('click', this.boundClickHandler)
         this.destroyAllCircles()
       }
@@ -262,12 +260,11 @@ export default function Index() {
       new ParticleNetwork(canvasDiv);
 
       const circleElm = document.querySelector('body');
-      console.log(document, circleElm)
       if (circleElm) {
         circle = new Circle(circleElm, {
-          colors: ['#1576fb', '#8a15fb', '#f0255d', '#f84110', '#e60e12', '#e6a10e'],
+          colors: ['#1576fb', '#8a15fb', '#f0255d', '#e6a10e', '#e60e12'],
           onClick: function (currentColor) {
-            console.log('New color : ' + currentColor)
+            
           }
         })
       }
