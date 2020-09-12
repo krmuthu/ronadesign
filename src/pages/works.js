@@ -3,7 +3,7 @@ import Layout from '../layout'
 
 import '../css/works.css'
 import img1 from '../images/img_iot.jpg'
-import img3 from '../images/img_quar.jpg'
+import img3 from '../images/img_quarantiner.jpg'
 import img4 from '../images/img_got.jpg'
 
 export default function Index() {
