@@ -7,7 +7,7 @@ import img3 from '../images/img_quarantine.jpg'
 import img4 from '../images/img_got.jpg'
 
 export default function Index() {
-  
+
   let next = 0;
   let curPage = 0;
   let pages = ['one', 'two', 'three', 'four'];
@@ -15,45 +15,64 @@ export default function Index() {
 
   const onScroll = (e) => {
     if (isScrolling) return;
-
     next += e.deltaY;
-    console.log(next)
     if (next > 1) {
-      if (curPage < 3) curPage++;
-      isScrolling = true;
+      if (curPage < 3) {
+        curPage++;
+        isScrolling = true;
+        goPage();
+      }
       next = 0;
-      goPage();
     } if (next < -1) {
-      if (curPage > 0) curPage--;
-      isScrolling = true;
+      if (curPage > 0){
+        curPage--;
+        isScrolling = true;
+        goPage();
+      }
       next = 0;
-      goPage();
     }
 
   }
   const goPage = () => {
-    console.log(curPage);
-    //document.querySelectorAll('.active').forEach((e) => {console.log(e)})
-    const aciveScreen = document.querySelector('.active');
-    if(aciveScreen) {
-      aciveScreen.classList.remove('active');
-    }
-    const newScreen = document.querySelector('.' + pages[curPage]);
-    if(aciveScreen) {
-      newScreen.classList.add('active');
-    }
-    
+
+    const curScreen = document.querySelector('.screen.active');
+    curScreen.classList.remove('active');
+    curScreen.classList.add('top');
+    const current = pages[curPage];
+    const screenNext = document.querySelector(`.screen.${current}`);
+    screenNext.classList.remove('top');
+
+    setTimeout(() => {
+      screenNext.classList.add('active')
+    }, 700);
+
+
     setTimeout(() => { isScrolling = false; }, 2000);
 
   }
   useEffect(() => {
+    const screenOne = document.querySelector('.screen.one');
+    screenOne.classList.add('active')
+    /*const screenOneHeader = document.querySelector('.screen.one h1');
+      const screenOnePara = document.querySelector('.screen.one p');
+  
+      
+      /*screenOneHeader.classList.add('activating')
+      screenOnePara.classList.add('activating')
+      setTimeout(() => {
+        screenOneHeader.classList.add('active')
+      }, 500);
+  
+      setTimeout(() => {
+        screenOnePara.classList.add('active')
+      }, 800);*/
+
     const width = window.innerWidth || document.body.clientWidth;
-    if(width < 901){
+    if (width > 900) {
       window.addEventListener('wheel', onScroll, false);
     }
-
     return () => {
-      if(width < 901){
+      if (width > 900) {
         window.removeEventListener('wheel', onScroll, false);
       }
     }
@@ -61,24 +80,23 @@ export default function Index() {
   return (
     <Layout>
       <div className="works">
-
-        <div className="screen one active">
+        <div className="screen one">
           <h1><span>The A-Team For</span><span>Your Every Design Need</span></h1>
-          <p>The digital conversion that will skyrocket your brand.</p>
+          <p><span>The digital conversion that will skyrocket your brand.</span></p>
         </div>
         <div className={`screen two `}>
-          <h1>IoT Mobile App - LG</h1>
-          <p>A project that focuses on modernizing LG’s IoT App for Air Conditioners. A focus on the dashboard and the most important information in every screen.</p>
+          <h1><span>IoT Mobile App - LG</span></h1>
+          <p><span>A project that focuses on modernizing LG’s IoT App for Air Conditioners.</span><span>A focus on the dashboard and the most important information in every screen.</span></p>
           <div className="img-holder"><img alt="IoT Mobile App - LG" src={img1} /></div>
         </div>
         <div className={`screen three`}>
-          <h1>Quarantine</h1>
-          <p>We aim to help you speak to your unique audience. So no matter the style - we help you translate your vision into a website.</p>
+          <h1><span>Quarantine</span></h1>
+          <p><span>We aim to help you speak to your unique audience. So no matter the style</span><span>- we help you translate your vision into a website.</span></p>
           <div className="img-holder"><img alt="Quarantine" src={img3} /></div>
         </div>
         <div className={`screen four`}>
-          <h1>GOT</h1>
-          <p>We also provide design consultations of your digital products and website which you may use to develop your presence internally.</p>
+          <h1><span>GOT</span></h1>
+          <p><span>We also provide design consultations of your digital products and website<span></span>which you may use to develop your presence internally.</span></p>
           <div className="img-holder"><img alt="GOT" src={img4} /></div>
         </div>
       </div>

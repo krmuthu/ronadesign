@@ -14,113 +14,28 @@
 
 .works p {
   font-size: 1.3rem;
-    max-width: 700px;
-    line-height: 2rem;
- 
-}
-
-
-@keyframes img-holder-enter {
-  0% {
-    transform: scale(.8) translate(0, 100vh);
-    overflow: hidden;
-  }
-  30% {
-    transform: scale(.8) translate(0%, 0%);
-    overflow: hidden;
-  }
-  100% {
-    transform: scale(1) translate(0%, 0%);
-    transform: none;
-  }
-}
-
-@keyframes para-enter {
-  0% {
-    transform: translate(-100vW, -10vh);
-    opacity: 0;
-  }
-  70% {
-    transform: translate(-100vW, -10vh);
-    opacity: 0;
-  }
-  100% {
-    transform: translate(0%, 0%);
-    opacity: 1;
-  }
+  max-width: 750px;
+  line-height: 2rem;
 }
 
 @keyframes header-enter {
   0% {
-    transform: translate(-100vW, -100vh);
-    opacity: 0;
-  }
-  70% {
-    transform: translate(-100vW, -100vh);
+    transform: translate(0, 20px);
     opacity: 0;
   }
   100% {
-    transform: translate(0%, 0%);
-    opacity: .9;
+    transform: translate(0, 0);
+    opacity: 1;
   }
 }
 
-@keyframes img-enter {
+@keyframes top-leave {
   0% {
-    transform: scale(1.5);
-    opacity: 0;
-  }
-  70% {
-    transform: scale(.75);
     opacity: 1;
+    transform: translate(0, 0);
   }
   100% {
-    transform: scale(1);
-  }
-}
-
-
-@keyframes para-leave {
-  0% {
-    transform: translate(0%, 0%);
-    opacity: .9;
-  }
-  50% {
-    transform: translate(0%, 0%);
-    opacity: .9;
-  }
-  100% {
-    transform: translate(-100vW, -10vh);
-    opacity: 0;
-  }
-}
-
-@keyframes header-leave {
-  0% {
-    transform: translate(0%, 0%);
-    opacity: 1;
-  }
-  50% {
-    transform: translate(0%, 0%);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-100vW, -100vh);
-    opacity: 0;
-  }
-}
-
-@keyframes img-leave {
-  0% {
-    transform: scale(1);
-    opacity: 1;
-  }
-  50% {
-    transform: scale(.75) translate(-15%, 0%);
-    
-  }
-  100% {
-    transform: scale(.75) translate(-15%, -100vh);
+    transform: translate(0, -20px);
     opacity: 0;
   }
 }
@@ -128,21 +43,113 @@
 @media (min-width: 901px) {
   .screen {
     position: absolute;
+  }
+  .works h1 span, .works p span {
+    display: block;
+  }
+  .screen.one {
+    margin-top: 150px;
+  }
+  .screen .img-holder img {
+    max-height: calc(50vh);
+  }
+  .screen h1 span,.screen p span, .screen .img-holder {
+    opacity: 0;
+    transform: translate(0, 20px);
+    transition: opacity .5s, transform .5s, filter .5s;
+  }
+  .screen .img-holder {
+    filter: blur(2px);
+    transition-delay: .6s;
+  }
+  
+  .screen h1:before {
+    opacity: 0;
+    transform: translate(-50%, -70%);
+    transition: opacity .5s, transform .5s;
+  }
+  .works h1 span:nth-child(1) {}
+  .works h1 span:nth-child(2) {
+    transition-delay: .2s;
+  }
+  .works p span:nth-child(1) {
+    transition-delay: .4s;
+  }
+  .works p span:nth-child(2) {
+    transition-delay: .5s;
+  }
+  .active.screen .img-holder {
+    filter: blur(0);
+  }
+  .active.screen h1:before {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+  .active.screen h1 span, .active.screen p span , .active.screen .img-holder {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  .active.screen h1:before {
+    opacity: 1;
+  }
+  .top.screen h1 span, .top.screen p span, .top.screen .img-holder {
+    transform: translate(0, -10px);
+    opacity: 0;
+  }
+  /*.works h1.activating span, .works p.activating span {
+    animation: header-enter .5s;
+  }
+  .works h1.topping span, .works p.topping span {
+    animation: top-leave .5s;
+  }
+  .works h1.top span, .works p.top span {
+    opacity: 0;
+  }
+  
+  .works h1 span:nth-child(2) {
+    animation-delay: .2s;
+  }
+  .works p span:first-child {
+    animation-delay: .5s;
+  }
+  .works p span:nth-child(2) {
+    animation-delay: .8s;
+  }
+  .works p span:nth-child(3) {
+    animation-delay: .11s;
+  }
+  .screen h1 span {
+    opacity: 0;
+  }
+  .screen p span {
+    opacity: 0;
+  }
+  .screen img {
     opacity: 0;
   }
   .screen.one {
-    margin-top:150px;
+    margin-top: 150px;
   }
-  .screen.active {
+  .screen h1:before{
+    opacity: 0;
+    transition:opacity 1.5s;
+  }
+  .screen.active h1:before{
     opacity: 1;
   }
-
+  .screen h1.active span {
+    opacity: 1;
+  }
+  .screen p.active span {
+    opacity: 1;
+  }*/
 }
-@media (max-width: 900px) { 
+
+@media (max-width: 900px) {
   .screen {
     margin-bottom: 50px;
   }
-  .works h1{
+  .works h1 {
     line-height: 4rem;
     padding-bottom: 0px;
   }
