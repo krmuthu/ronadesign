@@ -41,15 +41,14 @@
 }
 
 @media (min-width: 901px) {
-  
   .scroll {
     display: none;
   }
   .active .scroll {
     display: block;
   }
-  .scroll img{
-    height:40px;
+  .scroll img {
+    height: 40px;
     vertical-align: middle;
   }
   .works .screen h1 {
@@ -61,7 +60,7 @@
     line-height: 1rem;
   }
   .works p {
-    margin-bottom:75px;
+    margin-bottom: 75px;
   }
   .screen {
     position: absolute;
@@ -76,16 +75,14 @@
     max-height: calc(50vh);
     transform: translateY(103%);
   }
-  .screen h1 span,.screen p span {
+  .screen h1 span, .screen p span {
     opacity: 0;
     transform: translate(0, 20px);
     transition: opacity .5s, transform .5s;
   }
   .screen .img-holder {
     overflow: hidden;
-   
   }
-  
   .screen h1:before {
     opacity: 0;
     transform: translate(-50%, -70%);
@@ -100,7 +97,6 @@
   .works p span:nth-child(2) {
     transition-delay: .5s;
   }
-
   .top.screen h1 span, .top.screen p span {
     transform: translate(0, -10px);
   }
@@ -115,7 +111,6 @@
     transform: translateY(103%);
     transition: transform .5s;
   }
-  
   .active.screen .img-holder img {
     transform: translateY(0%);
     transition: transform .5s;
@@ -131,53 +126,32 @@
   .active.screen h1:before {
     opacity: 1;
   }
-  /*.works h1.activating span, .works p.activating span {
-    animation: header-enter .5s;
+  .dots {
+    display: none;
+    position: fixed;
+    top: 45%;
+    right: 50px;
+    z-index: 1;
   }
-  .works h1.topping span, .works p.topping span {
-    animation: top-leave .5s;
+  .active.dots {
+    display: block;
   }
-  .works h1.top span, .works p.top span {
-    opacity: 0;
+  .dots li {
+    border:1px solid #1576fb;
+    border-radius:50% ;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+  }
+  .dots li.active {
+    background-color: #1576fb;;
   }
   
-  .works h1 span:nth-child(2) {
-    animation-delay: .2s;
+}
+@media (max-width: 1350px) {
+  .dots {
+    right: 20px;
   }
-  .works p span:first-child {
-    animation-delay: .5s;
-  }
-  .works p span:nth-child(2) {
-    animation-delay: .8s;
-  }
-  .works p span:nth-child(3) {
-    animation-delay: .11s;
-  }
-  .screen h1 span {
-    opacity: 0;
-  }
-  .screen p span {
-    opacity: 0;
-  }
-  .screen img {
-    opacity: 0;
-  }
-  .screen.one {
-    margin-top: 150px;
-  }
-  .screen h1:before{
-    opacity: 0;
-    transition:opacity 1.5s;
-  }
-  .screen.active h1:before{
-    opacity: 1;
-  }
-  .screen h1.active span {
-    opacity: 1;
-  }
-  .screen p.active span {
-    opacity: 1;
-  }*/
 }
 
 @media (max-width: 900px) {
@@ -191,8 +165,10 @@
   .works p {
     margin-bottom: 20px;
   }
-
-.scroll {
-  display: none;
-}
+  .dots {
+    display: none;
+  }
+  .scroll {
+    display: none;
+  }
 }

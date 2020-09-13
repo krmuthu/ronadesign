@@ -21,7 +21,7 @@ export default function Index() {
     if (next > 1) {
       if (curPage < 3) {
         curPage++;
-        direction=1;
+        direction = 1;
         isScrolling = true;
         goPage();
       }
@@ -29,7 +29,7 @@ export default function Index() {
     } if (next < -1) {
       if (curPage > 0) {
         curPage--;
-        direction=-1;
+        direction = -1;
         isScrolling = true;
         goPage();
       }
@@ -37,13 +37,40 @@ export default function Index() {
     }
 
   }
-  const goPage = () => {
+  const onClick = (num) => {
+    if (isScrolling) return;
+    if (num > curPage) {
+      direction = 1;
+    } else {
 
+      direction = -1;
+    }
+    curPage = num;
+    isScrolling = true;
+    goPage();
+
+  }
+  const goPage = () => {
     const curScreen = document.querySelector('.screen.active');
     curScreen.classList.remove('active');
-    if(direction >0){
+    const dots = document.querySelector('.dots');
+    const dotsLi = document.querySelectorAll('.dots li');
+    const activeLi = document.querySelector('.dots li.active');
+    if (activeLi) {
+      activeLi.classList.remove('active');
+    }
+    if (dotsLi) {
+      dotsLi[curPage - 1].classList.add('active');
+    }
+    if (dots && curPage > 0) {
+      dots.classList.add('active');
+    } else {
+      dots.classList.remove('active');
+    }
+
+    if (direction > 0) {
       curScreen.classList.add('top');
-    }else {
+    } else {
       curScreen.classList.add('bottom');
     }
     const current = pages[curPage];
@@ -101,6 +128,13 @@ export default function Index() {
           <p><span>We also provide design consultations of your digital products and website</span>
             <span>which you may use to develop your presence internally.</span></p>
           <div className="img-holder"><img alt="GOT" src={img4} /></div>
+        </div>
+        <div className="dots">
+          <ul>
+            <li onClick={() => { onClick(1) }}></li>
+            <li onClick={() => { onClick(2) }}></li>
+            <li onClick={() => { onClick(3) }}></li>
+          </ul>
         </div>
       </div>
     </Layout>
