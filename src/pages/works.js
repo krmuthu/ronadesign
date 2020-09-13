@@ -59,7 +59,7 @@ export default function Index() {
     if (activeLi) {
       activeLi.classList.remove('active');
     }
-    if (dotsLi) {
+    if (dotsLi && dotsLi[curPage - 1]) {
       dotsLi[curPage - 1].classList.add('active');
     }
     if (dots && curPage > 0) {
