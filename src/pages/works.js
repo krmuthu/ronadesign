@@ -5,6 +5,7 @@ import '../css/works.css'
 import img1 from '../images/img_iot.jpg'
 import img3 from '../images/img_quarantine.jpg'
 import img4 from '../images/img_got.jpg'
+import arrow from '../images/down.png'
 
 export default function Index() {
 
@@ -12,6 +13,7 @@ export default function Index() {
   let curPage = 0;
   let pages = ['one', 'two', 'three', 'four'];
   let isScrolling = false;
+  let direction = '';
 
   const onScroll = (e) => {
     if (isScrolling) return;
@@ -19,6 +21,7 @@ export default function Index() {
     if (next > 1) {
       if (curPage < 3) {
         curPage++;
+        direction=1;
         isScrolling = true;
         goPage();
       }
@@ -26,6 +29,7 @@ export default function Index() {
     } if (next < -1) {
       if (curPage > 0) {
         curPage--;
+        direction=-1;
         isScrolling = true;
         goPage();
       }
@@ -37,14 +41,19 @@ export default function Index() {
 
     const curScreen = document.querySelector('.screen.active');
     curScreen.classList.remove('active');
-    curScreen.classList.add('top');
+    if(direction >0){
+      curScreen.classList.add('top');
+    }else {
+      curScreen.classList.add('bottom');
+    }
     const current = pages[curPage];
     const screenNext = document.querySelector(`.screen.${current}`);
-    screenNext.classList.remove('top');
-
+    //screenNext.classList.remove('top');
+    //screenNext.classList.remove('top');
     setTimeout(() => {
-      screenNext.classList.add('active')
-      curScreen.classList.remove('top')
+      screenNext.classList.add('active');
+      screenNext.classList.remove('top');
+      screenNext.classList.remove('bottom');
     }, 700);
 
     setTimeout(() => { isScrolling = false; }, 2000);
@@ -73,6 +82,9 @@ export default function Index() {
         <div className="screen one">
           <h1><span>The A-Team For</span><span>Your Every Design Need</span></h1>
           <p><span>The digital conversion that will skyrocket your brand.</span></p>
+          <p className="scroll">
+            <img src={arrow} /> scroll down
+          </p>
         </div>
         <div className={`screen two `}>
           <h1><span>IoT Mobile App - LG</span></h1>
@@ -86,7 +98,8 @@ export default function Index() {
         </div>
         <div className={`screen four`}>
           <h1><span>GOT</span></h1>
-          <p><span>We also provide design consultations of your digital products and website<span></span>which you may use to develop your presence internally.</span></p>
+          <p><span>We also provide design consultations of your digital products and website</span>
+            <span>which you may use to develop your presence internally.</span></p>
           <div className="img-holder"><img alt="GOT" src={img4} /></div>
         </div>
       </div>

@@ -41,6 +41,17 @@
 }
 
 @media (min-width: 901px) {
+  
+  .scroll {
+    display: none;
+  }
+  .active .scroll {
+    display: block;
+  }
+  .scroll img{
+    height:40px;
+    vertical-align: middle;
+  }
   .works .screen h1 {
     font-size: 3.5rem;
     line-height: 3.5rem;
@@ -89,9 +100,24 @@
   .works p span:nth-child(2) {
     transition-delay: .5s;
   }
+
+  .top.screen h1 span, .top.screen p span {
+    transform: translate(0, -10px);
+  }
+  .top.screen .img-holder img {
+    transform: translateY(-103%);
+    transition: transform .5s;
+  }
+  .bottom.screen h1 span, .bottom.screen p span {
+    transform: translate(0, -10px);
+  }
+  .bottom.screen .img-holder img {
+    transform: translateY(103%);
+    transition: transform .5s;
+  }
+  
   .active.screen .img-holder img {
     transform: translateY(0%);
-
     transition: transform .5s;
   }
   .active.screen h1:before {
@@ -104,15 +130,6 @@
   }
   .active.screen h1:before {
     opacity: 1;
-  }
-  .top.screen h1 span, .top.screen p span {
-    transform: translate(0, -10px);
-    opacity: 0;
-  }
-  .top.screen .img-holder img {
-    transform: translateY(-103%);
-
-    transition: transform .5s;
   }
   /*.works h1.activating span, .works p.activating span {
     animation: header-enter .5s;
@@ -174,4 +191,8 @@
   .works p {
     margin-bottom: 20px;
   }
+
+.scroll {
+  display: none;
+}
 }
