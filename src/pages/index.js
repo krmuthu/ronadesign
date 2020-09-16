@@ -263,7 +263,7 @@ export default function Index() {
       const circleElm = document.querySelector('body');
       if (circleElm) {
         circle = new Circle(circleElm, {
-          colors: ['#1576fb', '#8a15fb', '#f0255d', '#e6a10e', '#e60e12'],
+          colors: ['#1576fb', '#8a15fb', '#f0255d', '#e6a10e', '#e60e12', '#b16008', '#2ba011', '#0693a2'],
           onClick: function (currentColor) {
 
           }
