@@ -19,6 +19,9 @@ body.homeRoot {
 .homeRoot h1:before {
   background-color: #fff;
 }
+.homeRoot  .menu li {
+  color: #fff;
+}
 
 .btn-holder .hire{
   background-color: transparent;
@@ -49,7 +52,6 @@ body.homeRoot {
 }
 
 .header p {
-  animation-name: example;
   animation-duration: .5s;
 }
 
