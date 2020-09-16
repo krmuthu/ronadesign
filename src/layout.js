@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link, navigate } from 'gatsby'
+import { Link } from 'gatsby'
 import { Helmet } from 'react-helmet'
 
 import './css/typography.css'
@@ -40,10 +40,10 @@ export default function Template({path, children, currentPage }) {
                 <label htmlFor="navbar-checkbox"  className="navbar-handle"></label>
                 <div onClick={onChangeMenu} className="mobileMenu">
                   <ul>
-                    <li> <Link to="/">- Home</Link></li>
-                    <li> <Link to="/about-us/">- About us</Link></li>
-                    <li> <Link to="/works/">- Works</Link></li>
-                    <li> <Link to="/contact-us/">- Contact us</Link></li>
+                    <li>- <Link to="/">Home</Link></li>
+                    <li>- <Link to="/about-us/">About us</Link></li>
+                    <li>- <Link to="/works/">Works</Link></li>
+                    <li>- <Link to="/contact-us/">Contact us</Link></li>
                   </ul>
                 </div>
               </nav>

@@ -288,12 +288,25 @@ ul {
   .content {
     padding-left: 40px;
   }
+  .menu li {
+    transition: transform .5s;
+  }
+  .menu li a {
+    transition: transform .5s;
+    display: inline-block;
+  }
   .menu a, .menu a:active, .menu a:visited {
     text-decoration: none;
     color: #000;
   }
-  .menu li:hover a, .menu a[aria-current="page"] {
+  .menu a[aria-current="page"] {
     color: #1576fb;
+  }
+  .menu li:hover a {
+    transform: translate(10px,0);
+  }
+  .menu li:hover  {
+    transform: translate(5px,0);
   }
   h1::before {
     display: block;
@@ -441,16 +454,16 @@ ul {
 .navbar-handle:before, .navbar-handle:after {
   position: absolute;
   left: 0;
-  right: 0;
+  right: 10px;
   content: ' ';
   border-top: 0.13333333em solid;
 }
-
 .navbar-handle:before {
   top: 0.25em;
 }
 
 .navbar-handle:after {
   top: 0.65em;
+  display: none;
 }
 

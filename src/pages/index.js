@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import Layout from '../layout'
 import { Helmet } from 'react-helmet'
+import { Link } from 'gatsby'
 
 import '../css/home.css'
 
@@ -254,7 +255,7 @@ export default function Index() {
         div.style[property] = styles[property];
       }
     }
-    
+
     if (width > 900) {
       var canvasDiv = document.getElementById('particle-canvas');
       new ParticleNetwork(canvasDiv);
@@ -264,13 +265,13 @@ export default function Index() {
         circle = new Circle(circleElm, {
           colors: ['#1576fb', '#8a15fb', '#f0255d', '#e6a10e', '#e60e12'],
           onClick: function (currentColor) {
-            
+
           }
         })
       }
     }
-    return ()=> {
-      if(circle){
+    return () => {
+      if (circle) {
         const circleElm = document.querySelector('body');
         circleElm.style.backgroundColor = '';
         circle.destroy();
@@ -295,6 +296,10 @@ export default function Index() {
               <h1 className="header1" ><span >Design from</span><span>Good to Great</span></h1>
               <h1 className="header2" ><span >Website</span><span>Leads to Sales</span></h1>
             </div>
+            <h1 className="dummyheader" ><span >Design from</span> <span>Good to Great </span></h1>
+          </div>
+          <div className="btn-holder">
+            <Link className="hire" to="/contact-us/">Hire Us</Link>
           </div>
         </div>
       </Layout>

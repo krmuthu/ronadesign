@@ -1,114 +1,134 @@
 #particle-canvas {
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100%;
-    width: 100%;
-    pointer-events: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  pointer-events: none;
 }
+
+
+body.homeRoot {
+  color: #fff;
+  background-color: #1576fb;
+}
+
+.homeRoot .logo a:active, .homeRoot  .logo a:visited {
+  color: #fff;
+}
+.homeRoot h1:before {
+  background-color: #fff;
+}
+
+.btn-holder .hire{
+  background-color: transparent;
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 12px 44px 16px 44px;
+  text-decoration:none ;
+  padding:10px 30px;
+  border:1px solid #fff;
+}
+
 /* The animation code */
+
 @keyframes example {
-    from {margin-left:50px;opacity: 0;}
-    to {margin-left:0;opacity: 1;}
+  from {
+    margin-left: 50px;
+    opacity: 0;
+  }
+  to {
+    margin-left: 0;
+    opacity: 1;
+  }
 }
 
-.header p{
-    animation-name: example;
-    animation-duration: .5s;
+.header p {
+  animation-name: example;
+  animation-duration: .5s;
 }
 
-@media (max-width: 900px) { 
-  
+@media (max-width: 900px) {
+  .homeRoot .sidebar {
+    background-color: #1576fb;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+  }
+
+.btn-holder .hire{
+  font-size: 2rem;
+}
 }
 
 @media (min-width: 901px) {
-
-
-.js-circle {
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-}
-.js-circle .circle {
-  position: absolute;
-  z-index: -1;
-  border-radius: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  animation: circleGrowUp 1s ease-in forwards;
-}
-.js-circle .circle--mask:after {
-  content: '';
-  display: block;
-  position: absolute;
-  z-index: 1;
-  top: -100px;
-  left: -100px;
-  right: -100px;
-  bottom: -100px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 50%;
-}
-
-@keyframes circleGrowUp {
-  from {
-    width: 0;
-    height: 0;
+  .js-circle {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
   }
-  to {
-    width: 300vw;
-    height: 300vw;
+  .js-circle .circle {
+    position: absolute;
+    z-index: -1;
+    border-radius: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    animation: circleGrowUp 1s ease-in forwards;
   }
-}
+  .js-circle .circle--mask:after {
+    content: '';
+    display: block;
+    position: absolute;
+    z-index: 1;
+    top: -100px;
+    left: -100px;
+    right: -100px;
+    bottom: -100px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+  }
+  @keyframes circleGrowUp {
+    from {
+      width: 0;
+      height: 0;
+    }
+    to {
+      width: 300vw;
+      height: 300vw;
+    }
+  }
   .homeRoot .logo .imgHolder {
     background-color: transparent;
   }
-    .home {
-        display: grid;
-        grid-template-rows: 150px 1fr;
-    }
-    .home h1 {
-        width: 600px;
-    }
-    .homeRoot h1:before {
-      background-color:#fff;
-    }
-    .homeRoot .menu a, .homeRoot .menu a:active, .homeRoot .menu a:visited {
-      text-decoration: none;
-      color: rgba(255,255,255,.7);
-    }
-    .homeRoot .menu a:hover{
-      text-decoration: none;
-      color: rgba(255,255,255,.4);
-    }
-    .homeRoot .menu a[aria-current="page"] {
-      color: #fff;
-    }
-    .logo span, body, .menu a {
-      transition:background-color .3s;
-    }
-    body.homeRoot {
-      background-color:#1576fb;  
-    }
-    body.homeRoot {
-      color: #fff;
-    }
-    .homeRoot .logo span{
-      color: #fff;
-    }
-
+  .home {
+    display: grid;
+    grid-template-rows: 150px 1fr;
+  }
+  .home h1 {
+    width: 600px;
+  }
+  .homeRoot .menu a, .homeRoot .menu a:active, .homeRoot .menu a:visited {
+    text-decoration: none;
+    color: rgba(255, 255, 255, .7);
+  }
+  .homeRoot .menu a[aria-current="page"] {
+    color: #fff;
+  }
+  .logo span, body, .menu a {
+    transition: background-color .3s;
+  }
+  .homeRoot .logo span {
+    color: #fff;
+  }
 }
-
 
 .container {
-        position: relative;
+  position: relative;
+  position: relative;
+  float: left;
+  width: 100%;
 }
 
-.container h1{
-    position: absolute;
-    
-    
+.container h1 {
+  position: absolute;
 }
-
 
 .header1 span, .header2 span {
   width: 100%;
@@ -121,51 +141,53 @@
   animation-duration: 8s;
   animation-iteration-count: infinite;
 }
+
 .header1 span {
-    animation-name: titleAnimation1;
+  animation-name: titleAnimation1;
 }
 
 .header2 span {
-    animation-name: titleAnimation2;
+  animation-name: titleAnimation2;
 }
 
 .header1 span, .header2 span {
   -webkit-animation-fill-mode: forwards;
 }
+
 .header1 span:first-child, .header2 span:first-child {
   animation-delay: 0.2s;
 }
-.header1 span:last-child,.header2 span:last-child {
+
+.header1 span:last-child, .header2 span:last-child {
   animation-delay: 0.5s;
 }
 
-
 @keyframes titleAnimation1 {
-    0% {
-      transform: translateY(-50px);
-      opacity: 0;
-      -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
-      clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
-    }
-    5% {
-      transform: translateY(0);
-      opacity: 1;
-      -webkit-clip-path: polygon(100% 0, 100% 150%, 0 100%, 0 10%);
-      clip-path: polygon(100% 0, 100% 150%, 0 100%, 0 10%);
-    }
-    45% {
-      transform: translateY(0);
-      opacity: 1;
-      -webkit-clip-path: polygon(100% 0, 150% 100%, 0 130%, 0 10%);
-      clip-path: polygon(100% 0, 100% 150%, 0 130%, 0 10%);
-    }
-    50% {
-      transform: translateY(50px);
-      opacity: 0;
-      -webkit-clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
-      clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
-    }
+  0% {
+    transform: translateY(-50px);
+    opacity: 0;
+    -webkit-clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%, 0 80%);
   }
+  5% {
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-clip-path: polygon(100% 0, 100% 150%, 0 100%, 0 10%);
+    clip-path: polygon(100% 0, 100% 150%, 0 100%, 0 10%);
+  }
+  45% {
+    transform: translateY(0);
+    opacity: 1;
+    -webkit-clip-path: polygon(100% 0, 150% 100%, 0 130%, 0 10%);
+    clip-path: polygon(100% 0, 100% 150%, 0 130%, 0 10%);
+  }
+  50% {
+    transform: translateY(50px);
+    opacity: 0;
+    -webkit-clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
+    clip-path: polygon(100% 0, 100% 0%, 0 100%, 0 100%);
+  }
+}
 
 @keyframes titleAnimation2 {
   50% {
@@ -194,3 +216,17 @@
   }
 }
 
+.header {
+  position: relative;
+}
+.btn-holder {
+  float: left;
+}
+.dummyheader {
+  width: 100%;
+  visibility: hidden;
+  font-size: 5rem;
+}
+.dummyheader span {
+  display: block;
+}
