@@ -28,6 +28,11 @@ body.homeRoot {
   text-decoration:none ;
   padding:10px 30px;
   border:1px solid #fff;
+  transition: background .5s;
+}
+
+.btn-holder .hire:hover {
+  background: rgba(255,255,255,.1);
 }
 
 /* The animation code */

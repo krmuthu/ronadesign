@@ -275,6 +275,7 @@ ul {
 }
 
 .menu li {
+  color: #fff;
   transition: visibility 0.25s linear;
 }
 
@@ -289,6 +290,7 @@ ul {
     padding-left: 40px;
   }
   .menu li {
+    color: #000;
     transition: transform .5s;
   }
   .menu li a {
